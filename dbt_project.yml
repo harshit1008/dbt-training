@@ -1,0 +1,38 @@
+# Name of your project. This must match the key in your profiles.yml
+name: 'dbt_training'
+version: '1.0.0'
+config-version: 2
+
+# This matches the profile name we configured in profiles.yml
+profile: 'dbt_training'
+
+# Directory paths for various dbt resources
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+target-path: "target" # Directory where compiled SQL files are written
+clean-targets:        # Directories to be deleted by running `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+
+seeds:
+  dbt_training:
+    +schema: source
+    jaffle-data:
+      +enabled: "{{ var('load_source_data', true) }}"
+
+# Configuring models
+# All configurations defined here can be overridden within individual model files
+models:
+  dbt_training:
+    # Applies to all models in the project unless overridden
+    +materialized: view
+    
+    # Example folder configuration: models in models/example/ will be materialized as tables
+    example:
+      +materialized: table

@@ -1,0 +1,1 @@
+ select '2026-10-12' as start_date,   10000 as revenue                                                                                  

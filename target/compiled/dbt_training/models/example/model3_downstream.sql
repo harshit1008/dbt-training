@@ -1,0 +1,1 @@
+select * from "dbt_training"."ecommerce"."model2_join"

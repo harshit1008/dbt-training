@@ -1,0 +1,3 @@
+{
+    "dbt.dbtPythonPathOverride": "/Users/hjain/Projects/dbt-training/dbt-env/bin/python3"
+}

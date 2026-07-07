@@ -1,0 +1,1 @@
+select 3 as col3, 4 as col4
