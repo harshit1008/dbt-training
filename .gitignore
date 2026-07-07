@@ -1,6 +1,10 @@
 # dbt
 target/
 dbt_packages/
+dbt-env/
+dbt_env/
+logs/
+*.log
 
 # Python
 __pycache__/
@@ -12,6 +16,18 @@ env/
 venv/
 ENV/
 .venv
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.egg-info/
+dist/
+build/
 
 # IDE
 .vscode/
@@ -19,19 +35,38 @@ ENV/
 *.swp
 *.swo
 *~
+*.sublime-project
+*.sublime-workspace
 
 # OS
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
 
-# Logs
-logs/
-*.log
-
 # dbt-specific
-.profiles.yml
 profiles.yml
+dbt_project.yml.bak
+.DBT_USER
 
 # Environment variables
 .env
 .env.local
+.env.*.local
+
+# Secrets
+credentials.yaml
+*.pem
+*.key
+
+# macOS
+*.swp
+*~.nib
+
+# Temporary files
+*.tmp
+*.temp
+*~
