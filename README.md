@@ -34,6 +34,25 @@ cp profiles_databricks.yml.example ~/.dbt/profiles.yml
 
 See the example in [profiles_databricks.yml.example](profiles_databricks.yml.example).
 
+**Profiles example**
+
+Copy this snippet into your `~/.dbt/profiles.yml` (or use the provided example file) and replace placeholders:
+
+```yaml
+dbt_training:
+	outputs:
+		databricks:
+			type: databricks
+			host: dbc-9d8c5a55-b9bc.cloud.databricks.com
+			http_path: /sql/1.0/warehouses/ae94c45177f93bb2
+			catalog: dbt-training
+			schema: raw
+			token: <YOUR_DATABRICKS_TOKEN>
+			threads: 4
+	target: databricks
+```
+
+
 **4) Test the connection**
 ```bash
 dbt debug --profiles-dir ~/.dbt --target databricks
