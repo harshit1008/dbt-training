@@ -1,0 +1,13 @@
+dbt_training:
+  outputs:
+    databricks:
+      type: databricks
+      host: <YOUR_DATABRICKS_HOST> # e.g. dbc-1234567890.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/<WAREHOUSE_ID>
+      catalog: <YOUR_CATALOG> # e.g. main
+      schema: raw
+      token: <YOUR_DATABRICKS_TOKEN>
+      threads: 4
+  target: databricks
+
+# Copy this file to ~/.dbt/profiles.yml and replace placeholders with real values.
